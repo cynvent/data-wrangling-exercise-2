@@ -27,3 +27,7 @@ male_mean_age <-30.43072
 
 #Lifeboats - replace blank values with NA
 titanic_original$boat[titanic_original$boat == ""] <- "NA"
+
+#Cabins - 
+titanic_original$has_cabin_number <- ifelse(titanic_original$cabin == "", 0,1)
+
