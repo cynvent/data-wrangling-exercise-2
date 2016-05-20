@@ -25,6 +25,15 @@ titanic_original %>%
 female_mean_age <- 28.88694
 male_mean_age <-30.43072
 
+#Age - mean age by gender v2
+male_mean_age <- titanic_original %>% 
+  filter(sex == "male") %>% 
+  summarise(mean_age = mean(age, na.rm=FALSE))
+
+female_mean_age <- titanic_original %>% 
+  filter(sex == "female") %>% 
+  summarise(mean_age = mean(age, na.rm=FALSE))
+
 #Lifeboats - replace blank values with NA
 titanic_original$boat[titanic_original$boat == ""] <- "NA"
 
